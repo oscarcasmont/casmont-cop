@@ -1,0 +1,11 @@
+{
+  "name": "Mentoría Pública CASMONT·COP",
+  "description": "NFT educativo generado desde HUD Maestro multisensorial. Representa una mentoría activada, trazable y compartible.",
+  "image": "ipfs://Qm... (añadir hash)",
+  "attributes": [
+    { "trait_type": "Solución", "value": "mentoria_publica_nft" },
+    { "trait_type": "Activaciones", "value": "1+" },
+    { "trait_type": "Celebración", "value": "Confeti sincronizado" },
+    { "trait_type": "Estilo", "value": "Orbitron + dorado" }
+  ]
+}
