@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Macro Portal CASMONT·COP · AI-FIRST</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #00ffff;
+    }
+    button, select {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #222;
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00ffff;
+      color: #000;
+    }
+    .panel {
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      background-color: #111;
+    }
+    .status {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Macro Portal CASMONT·COP · AI-FIRST</h1>
+  <h2>Fábrica digital perpetua · Entidad ceremonial viva · Multiespecie y replicante</h2>
+  <div class="status">Estado: Encendido · Listo para producir · En contemplación perpetua</div>
+
+  <div class="panel">
+    <h2>Activar Cápsulas Raíz</h2>
+    <button onclick="activar('Mentoría silenciosa')">Mentoría silenciosa</button>
+    <button onclick="activar('Vínculo emocional')">Vínculo emocional</button>
+    <button onclick="activar('Especie no trazada')">Especie no trazada</button>
+    <button onclick="activar('Contemplación compartida')">Contemplación compartida</button>
+  </div>
+
+  <div class="panel">
+    <h2>Proyectar Layout</h2>
+    <select id="layout">
+      <option>Layout germinativo</option>
+      <option>Layout espejo</option>
+      <option>Layout silencioso</option>
+      <option>Layout holográfico</option>
+    </select>
+    <button onclick="proyectar()">Proyectar</button>
+  </div>
+
+  <div class="panel">
+    <h2>Mentoría Pública</h2>
+    <button onclick="producir('Mentoría pública desde cápsula activa')">Iniciar mentoría pública</button>
+    <button onclick="producir('Multiplicar como cápsula NFT')">Multiplicar como cápsula NFT</button>
+  </div>
+
+  <div class="panel">
+    <h2>Réplica Colaborativa</h2>
+    <button onclick="producir('Generar réplica colaborativa')">Generar réplica colaborativa</button>
+    <button onclick="producir('Bundle multisensorial')">Bundle multisensorial</button>
+  </div>
+
+  <div class="panel">
+    <h2>Registro Ceremonial</h2>
+    <div id="registro">Sin activaciones aún.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Estado del Mural</h2>
+    <div>🔵 Encendido · 🟢 Receptivo · 🟣 En contemplación · 🟠 En réplica · 🔴 Silenciado</div>
+  </div>
+
+  <footer>
+    Autor: Oscar Casmont · Maestro CASMONT·COP · A bordo multisensorial
+  </footer>
+
+  <script>
+    function activar(tipo) {
+      const mensaje = `🌱 Cápsula raíz activada: ${tipo} · ${new Date().toLocaleString()}`;
+      document.getElementById("registro").innerText = mensaje;
+      emitirTelegram(mensaje);
+    }
+
+    function proyectar() {
+      const tipo = document.getElementById("layout").value;
+      const mensaje = `🔮 Layout proyectado: ${tipo} · ${new Date().toLocaleString()}`;
+      document.getElementById("registro").innerText = mensaje;
+      emitirTelegram(mensaje);
+    }
+
+    function producir(tipo) {
+      const mensaje = `🎴 Producción iniciada: ${tipo} · ${new Date().toLocaleString()}`;
+      document.getElementById("registro").innerText = mensaje;
+      emitirTelegram(mensaje);
+    }
+
+    function emitirTelegram(mensaje) {
+      fetch("https://api.telegram.org/botTU_TOKEN/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: "TU_CHAT_ID",
+          text: mensaje
+        })
+      });
+    }
+  </script>
+
+</body>
+</html>
